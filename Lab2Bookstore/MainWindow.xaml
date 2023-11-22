@@ -11,6 +11,11 @@
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -18,10 +23,162 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Button x:Name="BtnGoToEditWindow" Grid.Column="2" Grid.Row="2" Content="Edit Books" Click="BtnGoToEditWindow_Click"/>
+
+        <Label x:Name="LabelTitle" 
+       Content="LiberaDB" 
+       HorizontalAlignment="Center" 
+       Grid.Column="2" 
+       Grid.ColumnSpan="6" 
+       Grid.Row="2" 
+       FontWeight="Bold"
+       FontSize="30"/>
+        <Button x:Name="BtnGoToEditWindow" 
+                Grid.Column="2" 
+                Grid.Row="13" 
+                Content="Edit Books" Click="BtnGoToEditWindow_Click" />
+
+        <Button x:Name="BtnTransferBook" 
+                Grid.Column="4" 
+                Grid.Row="13" 
+                Content="Transfer Books" 
+                Click="BtnTransferBook_Click"/>
+
+        <Button x:Name="BtnQuit" 
+                Grid.Column="3" 
+                Grid.Row="13" 
+                Content="Quit" Click="BtnQuit_Click" />
+
+        <Button x:Name="BtnRemoveBookFromStore" 
+         Grid.Column="2" 
+         Grid.Row="14" 
+         Content="Remove a Copy" Click="BtnRemoveBookFromStore_Click"/>
+
+        <Button x:Name="BtnAddBookToStore" 
+         Grid.Column="3" 
+         Grid.Row="14" 
+         Content="Add a Copy" Click="BtnAddBookToStore_Click"/>
+
+            <Label  
+                x:Name="LStoreFrom"
+                Content="Select Store: "
+                Grid.Column="2"
+                Grid.Row="3"
+                HorizontalContentAlignment="Right"/>
+        <ComboBox   x:Name="CBSelectStoreFrom"
+                    Grid.Column="3"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Width="230"
+                    DisplayMemberPath="StoreName" SelectionChanged="CBSelectStoreFrom_SelectionChanged"/>
+        <Label  x:Name="LStoreTo"
+                Content="Select Store To:"
+                Grid.Column="2"
+                Grid.Row="4"
+                HorizontalContentAlignment="Right"/>
+        <ComboBox   x:Name="CBSelectStoreTo"
+                    Grid.Column="3"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Width="230"
+                    DisplayMemberPath="StoreName" SelectionChanged="CBSelectStoreTo_SelectionChanged" />
+        <Label  
+                Content="Title: " 
+                Grid.Column="2" 
+                Grid.Row="5"
+                HorizontalContentAlignment="Right"
+                VerticalContentAlignment="Top"/>
+        <TextBlock    x:Name="TBTitle" 
+                    Grid.Column="3" 
+                    Grid.ColumnSpan="2"
+                    Grid.Row="5"
+                    Width="230"
+                    VerticalAlignment="Center"/>
+        <Label  Content="Author: " 
+                Grid.Column="2" 
+                Grid.Row="6"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock 
+                x:Name="TBAuthor" 
+                Grid.Column="3" 
+                Grid.ColumnSpan="2"
+                Grid.Row="6"
+                Width="230"
+                VerticalAlignment="Center">
+        </TextBlock>
+
+        <Label  Content="Category: " 
+                Grid.Column="2" 
+                Grid.Row="7"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock  x:Name="TBCategory" 
+                    Grid.Column="3" 
+                    Grid.ColumnSpan="2"
+                    Grid.Row="7"
+                    Width="230"
+                    VerticalAlignment="Center"/>
+        <Label  Content="Price: " 
+                Grid.Column="2" 
+                Grid.Row="8"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock  x:Name="TBPrice" 
+                    Grid.Column="3" 
+                    Grid.ColumnSpan="2"
+                    Grid.Row="8"
+                    Width="230"
+                    VerticalAlignment="Center"/>
+        <Label  Content="Availble Copies From: " 
+                Grid.Column="2" 
+                Grid.Row="9"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock  x:Name="TBAvailbleCopiesFrom" 
+                    Grid.Column="3" 
+                    Grid.Row="9"
+                    Grid.ColumnSpan="2"
+                    Width="230"
+                    VerticalAlignment="Center"/>
+        <Label  Content="Availble Copies To: " 
+                Grid.Column="2" 
+                Grid.Row="10"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock  x:Name="TBAvailbleCopiesTo" 
+            Grid.Column="3" 
+            Grid.Row="10"
+            Grid.ColumnSpan="2"
+            Width="230"
+            VerticalAlignment="Center"/>
+        <Label  Content="ISBN: " 
+                Grid.Column="2" 
+                Grid.Row="11"
+                HorizontalContentAlignment="Right"/>
+        <TextBlock  x:Name="TBISBN" 
+                    Grid.Column="3" 
+                    Grid.Row="11"
+                    Grid.ColumnSpan="2"
+                    Width="230"
+                    VerticalAlignment="Center"/>
+        <ListBox    x:Name="ListBoxOfBooks" 
+                    Grid.Column="7" 
+                    Grid.Row="3" 
+                    Grid.RowSpan="11"
+                    Width="300" 
+                    DisplayMemberPath="Title" SelectionChanged="ListBoxOfBooks_SelectionChanged"
+                    />
+
 
     </Grid>
 </Window>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="Lab2Bookstore.EditWindow"
+﻿<Window x:Class="Lab2Bookstore.AddAuthor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2Bookstore"
         mc:Ignorable="d"
-        Title="EditWindow" Height="450" Width="800">
+        Title="AddAuthor" Height="490" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -27,21 +27,14 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="LabelTitle" 
+        <Label  x:Name="LabelTitle" 
                 Content="LiberaDB" 
                 HorizontalAlignment="Center" 
                 Grid.Column="2" 
@@ -50,36 +43,12 @@
                 FontWeight="Bold"
                 FontSize="30"/>
         
-        <ListBox x:Name="ListBoxOfBooks" 
+        <ListBox x:Name="LBOfAuthors" 
                  Grid.Column="7" 
                  Grid.Row="3" 
-                 Grid.RowSpan="11"
-                 Width="300" 
-                 DisplayMemberPath="Title"
-                 SelectionChanged="ListBoxOfBooks_SelectionChanged"/>
-        
-
-        <Label Content="Title" 
-               Grid.Column="2" 
-               Grid.Row="4"/>
-        
-        <TextBox x:Name="TBTitle" 
-                 Grid.Column="3" 
-                 Grid.ColumnSpan="2"
-                 Grid.Row="4"
-                 Width="190"/>
-        
-        <Label Content="Author" 
-               Grid.Column="2" 
-               Grid.Row="5"/>
-        
-        <ComboBox 
-            x:Name="ComboBoxAuthor" 
-            Grid.Column="3" 
-            Grid.ColumnSpan="2"
-            Grid.Row="5"
-            Width="190">
-            <ComboBox.ItemTemplate>
+                 Grid.RowSpan="6"
+                 Width="300" SelectionChanged="LBOfAuthors_SelectionChanged" >
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding FirstName}" />
@@ -87,89 +56,57 @@
                         <TextBlock Text="{Binding LastName}" />
                     </StackPanel>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        
-        <Label Content="Category" 
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+            <Label Content="FirstName" 
                Grid.Column="2" 
-               Grid.Row="6"/>
-        
-        <TextBox x:Name="TBCategory" 
+               Grid.Row="3"/>
+        <TextBox x:Name="TBFirstName" 
                  Grid.Column="3" 
                  Grid.ColumnSpan="2"
-                 Grid.Row="6"
+                 Grid.Row="3"
                  Width="190"/>
-        
-        <Label Content="Price" 
+        <Label Content="LastName" 
                Grid.Column="2" 
-               Grid.Row="7"/>
-        
-        <TextBox x:Name="TBPrice" 
+               Grid.Row="4"/>
+        <TextBox x:Name="TBLastName" 
                  Grid.Column="3" 
                  Grid.ColumnSpan="2"
-                 Grid.Row="7"
+                 Grid.Row="4"
                  Width="190"/>
-        
-        
-        <Label Content="ISBN" 
+
+        <Label Content="Birthdate" 
                Grid.Column="2" 
-               Grid.Row="9"/>
-        
-        <TextBox x:Name="TBISBN" 
-                Grid.Column="3" 
-                Grid.Row="9"
-                Grid.ColumnSpan="2"
-                Width="190"/>
-        
-        <Label Content="Language" 
-               Grid.Column="2" 
-               Grid.Row="10"/>
-        
-        <TextBox x:Name="TBLanguage" 
-                 Grid.Column="3" 
-                 Grid.Row="10"
-                 Grid.ColumnSpan="2"
-                 Width="190"/>
-        
-        <Label Content="Release Date" 
-               Grid.Column="2" 
-               Grid.Row="11"/>
-        
-        <TextBox x:Name="TBReleaseDate" 
+               Grid.Row="5"/>
+        <TextBox x:Name="TBBirthDate" 
                  Grid.Column="3" 
                  Grid.ColumnSpan="2"
-                 Grid.Row="11"
+                 Grid.Row="5"
                  Width="190"/>
-        
         <Button x:Name="BtnCreate" 
                 Content="Create" 
                 Grid.Column="2" 
-                Grid.Row="13" Click="Create_Click" />
-        
+                Grid.Row="7" 
+                Click="BtnCreate_Click"/>
         <Button x:Name="BtnUpdate" 
                 Content="Update" 
                 Grid.Column="3" 
-                Grid.Row="13" Click="Update_Click" />
-        
+                Grid.Row="7" 
+                Click="BtnUpdate_Click"/>
         <Button x:Name="BtnDelete" 
                 Content="Delete" 
                 Grid.Column="4" 
-                Grid.Row="13" Click="Delete_Click" />
-        
-        <Button x:Name="BtnAddAuthor" 
-                Content="Add Author" 
-                Grid.Column="2" 
-                Grid.Row="15" Click="BtnAddAuthor_Click"/>
-        
+                Grid.Row="7" 
+                Click="BtnDelete_Click"/>
         <Button x:Name="BtnReturn" 
-                Content="Return to Menu" 
+                Content="Return To Edit" 
                 Grid.Column="3" 
-                Grid.Row="15" Click="BtnReturn_Click" />
-        
+                Grid.Row="8" Click="BtnReturn_Click" />
         <Button x:Name="BtnClear" 
                 Content="Clear Selection" 
-                Grid.Column="4" 
-                Grid.Row="15" Click="BtnClear_Click" />
+                Grid.Column="2" 
+                Grid.Row="8" Click="BtnClear_Click" />
 
     </Grid>
 </Window>
