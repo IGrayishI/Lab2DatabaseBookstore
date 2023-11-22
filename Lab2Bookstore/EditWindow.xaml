@@ -157,7 +157,7 @@
                 Grid.Row="13" Click="Delete_Click" />
         
         <Button x:Name="BtnAddAuthor" 
-                Content="Add Author" 
+                Content="Edit Author" 
                 Grid.Column="2" 
                 Grid.Row="15" Click="BtnAddAuthor_Click"/>
         
